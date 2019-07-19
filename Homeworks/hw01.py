@@ -10,10 +10,7 @@ def a_plus_abs_b(a, b):
     >>> a_plus_abs_b(2, -3)
     5
     """
-    if b < 0:
-        f = sub
-    else:
-        f = add
+    f=sub if b<0 else add
     return f(a, b)
 
 def two_of_three(a, b, c):
@@ -29,7 +26,7 @@ def two_of_three(a, b, c):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return a*a+b*b+c*c-min(a,b,c)*min(a,b,c)
+    return a*a+b*b+c*c-min(a,b,c)**2
 
 def largest_factor(n):
     """Return the largest factor of n that is smaller than n.
@@ -63,11 +60,7 @@ def if_function(condition, true_result, false_result):
     >>> if_function(3>2, 3+2, 3-2)
     5
     """
-    if condition:
-        return true_result
-    else:
-        return false_result
-
+    return true_result if condition else false_result
 
 def with_if_statement():
     """
@@ -93,12 +86,15 @@ def with_if_function():
 
 def c():
     "*** YOUR CODE HERE ***"
+    return False
 
 def t():
     "*** YOUR CODE HERE ***"
+    print(1)
 
 def f():
     "*** YOUR CODE HERE ***"
+    pirnt(2)
 
 def hailstone(n):
     """Print the hailstone sequence starting at n and return its
