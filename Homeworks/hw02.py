@@ -166,10 +166,7 @@ def num_sevens(n):
     """
     "*** YOUR CODE HERE ***"
     if n<10:
-        if n==7:
-            return 1
-        else:
-            return 0
+        return 1 if n==7 else 0
     else:
         return num_sevens(n%10)+num_sevens(n//10)
 
@@ -285,19 +282,13 @@ def move_stack(n, start, end):
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
     "*** YOUR CODE HERE ***"
-    if start+end==3:
-        middle=3
-    if start+end==4:
-        middle=2
-    if start+end==5:
-        middle=1
     if n==1:
         print_move(start,end)
     else:
+        middle=6-start-end
         move_stack(n-1,start,middle)
         move_stack(1,start,end)
         move_stack(n-1,middle,end)
-
 
 from operator import sub, mul
 
